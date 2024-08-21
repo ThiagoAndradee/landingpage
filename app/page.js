@@ -24,7 +24,8 @@ export default function LandingPage() {
     const fetchContent = async () => {
       try {
         const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/landingpages?clientId=nomedocliente`);
-        setContent(response.data);
+        
+        setContent(response.data.hero);
       } catch (error) {
         console.error('Error fetching content:', error);
       }
